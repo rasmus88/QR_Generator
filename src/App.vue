@@ -1,11 +1,13 @@
 <template>
-  <div id="app">
-    <div id="nav">
+  <div id="app" class="grid-container"> 
+    <div id="nav" class="navigation-item">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
-  </div>
+    <div class="main-item">
+      <router-view/>
+    </div>
+  </div> 
 </template>
 
 <style>
@@ -17,16 +19,22 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.navigation-item {
+   grid-area: menu;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.main-item {
+  grid-area: main;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  'menu main main main'
+  'menu main main main';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
 }
+
 </style>
