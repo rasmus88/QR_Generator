@@ -1,4 +1,5 @@
 # stream-top-picks
+Built with @vue/cli 4.5.9 / typescript
 
 ## Project setup
 ```
