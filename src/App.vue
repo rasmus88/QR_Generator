@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="grid-container"> 
     <div id="nav" class="navigation-item">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link class="nav-item" to="/">Home</router-link>
+      <router-link class="nav-item" to="/about">About</router-link>
     </div>
     <div class="main-item">
       <router-view/>
@@ -23,6 +23,11 @@
    grid-area: menu;
 }
 
+.nav-item {
+  display: block;
+  padding: 10px;
+}
+
 .main-item {
   grid-area: main;
 }
@@ -32,8 +37,7 @@
   grid-template-areas: 
   'menu main main main'
   'menu main main main';
-  grid-gap: 10px;
-  background-color: #2196F3;
+  grid-gap: 10px; 
   padding: 10px;
 }
 
