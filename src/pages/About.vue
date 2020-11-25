@@ -22,11 +22,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import QrtagImage from '@/components/QrTagImg.vue';
+import QrTagImg from '@/components/QrTagImg.vue';
   
   @Component({
     components: {
-      QrtagImage
+      QrTagImg
     }
   })
   export default class AboutComponent extends Vue { 
