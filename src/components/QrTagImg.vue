@@ -11,7 +11,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
   name: 'QrTagImg'
 })
 export default class QrTagImg extends Vue {
-  @Prop() private url!: string;
+  @Prop() private url!: string; 
 }
 
 </script>

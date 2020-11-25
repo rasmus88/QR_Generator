@@ -14,8 +14,8 @@
      <b-icon icon="arrow-clockwise" animation="spin" font-scale="4"></b-icon>
    </div>
 
-   <div v-if="submitted">
-     <QrTagImg url="form.url"></QrTagImg> 
+   <div v-if="submitted && !loading">
+     <QrTagImg :url="form.url"></QrTagImg> 
    </div>
   </div> 
 </template>
@@ -25,24 +25,23 @@ import { Component, Vue } from 'vue-property-decorator';
 import QrTagImg from '@/components/QrTagImg.vue';
   
   @Component({
-    components: {
-      QrTagImg
-    }
+    components: { QrTagImg }
   })
   export default class AboutComponent extends Vue { 
 
     private submitted = false;
     private loading = false;
+
     form = {
       url: ''
-    }
+    };
  
-    onSubmit() {
+    onSubmit() { 
       this.loading = true;
-
+    
        setTimeout(() => {
           this.loading = false; 
-          this.submitted = !this.submitted; 
+          this.submitted = true;
        }, 500);
     }
   }
