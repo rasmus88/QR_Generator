@@ -1,4 +1,4 @@
-# stream-top-picks
+# QR Tag Generator
 Built with @vue/cli 4.5.9 / typescript
 
 ## Project setup

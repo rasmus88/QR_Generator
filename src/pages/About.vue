@@ -1,7 +1,7 @@
 <template>
   <div>  
    <h1>Generate QR Tag</h1>
-    
+   
    <b-form @submit.prevent="onSubmit">
      <b-form-group label="Url:" label-for="input-url">
        <b-form-input id="input-url" v-model="form.url" name="input-url" type="url" required></b-form-input>
@@ -15,14 +15,14 @@
    </div>
 
    <div v-if="submitted">
-     <QrtagImage url="form.url"></QrtagImage> 
+     <QrTagImg url="form.url"></QrTagImg> 
    </div>
   </div> 
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import QrtagImage from '@/components/QrTagImage.vue';
+import QrtagImage from '@/components/QrTagImg.vue';
   
   @Component({
     components: {

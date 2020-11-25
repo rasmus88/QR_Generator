@@ -8,9 +8,9 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component({
-  name: 'QrtagImage'
+  name: 'QrTagImg'
 })
-export default class QrtagImage extends Vue {
+export default class QrTagImg extends Vue {
   @Prop() private url!: string;
 }
 
