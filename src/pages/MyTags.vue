@@ -40,7 +40,6 @@ export default class MytagsComponent extends Vue {
      } else {
          console.warn("Storage not supported");
      }
-  
   }, 500); 
   }
 }

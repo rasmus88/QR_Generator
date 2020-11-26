@@ -13,19 +13,13 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component({
-  name: 'QrTagImg',
-  computed: {
-    
-  }
+  name: 'QrTagImg'
 })
 export default class QrTagImg extends Vue {
   @Prop() private url!: string;
   @Prop() private small!: boolean;
-
-
 }
 </script>
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 </style>
