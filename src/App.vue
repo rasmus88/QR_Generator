@@ -2,7 +2,8 @@
   <div id="app" class="grid-container"> 
     <div id="nav" class="navigation-item">
       <router-link class="nav-item" to="/">Home</router-link>
-      <router-link class="nav-item" to="/about">About</router-link>
+      <router-link class="nav-item" to="/generate">Generate</router-link>
+      <router-link class="nav-item" to="/mytags">My Tags</router-link>
     </div>
     <div class="main-item">
       <router-view/>

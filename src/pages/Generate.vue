@@ -27,7 +27,7 @@ import QrTagImg from '@/components/QrTagImg.vue';
   @Component({
     components: { QrTagImg }
   })
-  export default class AboutComponent extends Vue { 
+  export default class GenerateComponent extends Vue { 
 
     private submitted = false;
     private loading = false;
@@ -38,7 +38,14 @@ import QrTagImg from '@/components/QrTagImg.vue';
  
     onSubmit() { 
       this.loading = true;
-    
+
+       // save to localstorage
+       if (typeof(Storage) !== 'undefined') {
+         localStorage.setItem(this.form.url, this.form.url);
+       } else {
+         console.warn("No web storage support..");
+       }
+
        setTimeout(() => {
           this.loading = false; 
           this.submitted = true;
