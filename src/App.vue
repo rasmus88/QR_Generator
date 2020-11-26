@@ -1,21 +1,15 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <div id="app" class="grid-container"> 
+    <div id="nav" class="navigation-item">
+      <router-link class="nav-item" to="/">Home</router-link>
+      <router-link class="nav-item" to="/generate">Generate</router-link>
+      <router-link class="nav-item" to="/mytags">My Tags</router-link>
+    </div>
+    <div class="main-item">
+      <router-view/>
+    </div>
+  </div> 
 </template>
-
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
-
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
-export default class App extends Vue {}
-</script>
 
 <style>
 #app {
@@ -24,6 +18,28 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+.navigation-item {
+   grid-area: menu;
+}
+
+.nav-item {
+  display: block;
+  padding: 10px;
+}
+
+.main-item {
+  grid-area: main;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  'menu main main main'
+  'menu main main main';
+  grid-gap: 10px; 
+  padding: 10px;
+}
+
 </style>
