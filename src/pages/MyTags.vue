@@ -4,10 +4,9 @@
      <div v-if="loading">
        <b-icon icon="arrow-clockwise" animation="spin" font-scale="4"></b-icon>
      </div>
-     <div v-if="!loading">
-      <div v-for="item in storageUrlArr" :key="item.url">
-          <p>{{item.url}}</p>
-          <QrTagImg :small="true" :url="item.url"></QrTagImg> 
+     <div class="tags-container" v-if="!loading">
+      <div v-for="item in storageUrlArr" :key="item.url"> 
+          <QrTag :small="true" :url="item.url"></QrTag> 
       </div>
      </div>
  </div>
@@ -15,10 +14,10 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import QrTagImg from '@/components/QrTagImg.vue';
+import QrTag from '@/components/QrTag.vue';
   
 @Component({
-    components: { QrTagImg }
+    components: { QrTag }
 })
 export default class MytagsComponent extends Vue {
   loading: boolean = false;
@@ -44,3 +43,10 @@ export default class MytagsComponent extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.tags-container {
+  margin: auto;
+  width: fit-content;
+}
+</style>

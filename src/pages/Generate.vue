@@ -11,18 +11,18 @@
    <div v-if="loading">
      <b-icon icon="arrow-clockwise" animation="spin" font-scale="4"></b-icon>
    </div>
-   <div v-if="submitted && !loading">
-     <QrTagImg :url="form.url"></QrTagImg> 
+   <div class="tags-container" v-if="submitted && !loading">
+     <QrTag :url="form.url"></QrTag> 
    </div>
   </div> 
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import QrTagImg from '@/components/QrTagImg.vue';
+import QrTag from '@/components/QrTag.vue';
   
   @Component({
-    components: { QrTagImg }
+    components: { QrTag }
   })
   export default class GenerateComponent extends Vue { 
     private submitted = false;
@@ -49,3 +49,9 @@ import QrTagImg from '@/components/QrTagImg.vue';
     }
   }
 </script>
+<style scoped>
+.tags-container {
+  margin: auto;
+  width: fit-content;
+}
+</style>
