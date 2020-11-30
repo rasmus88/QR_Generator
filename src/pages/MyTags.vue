@@ -6,14 +6,14 @@
      </div>
      <div class="tags-container" v-if="!loading">
       <div v-for="item in storageUrlArr" :key="item.url"> 
-          <QrTag :small="true" :url="item.url"></QrTag> 
+          <QrTag @display-source="sourceTagUrl" :small="true" :url="item.url"></QrTag> 
       </div>
      </div>
  </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Emit, Vue } from 'vue-property-decorator';
 import QrTag from '@/components/QrTag.vue';
   
 @Component({
@@ -23,10 +23,14 @@ export default class MytagsComponent extends Vue {
   loading: boolean = false;
   storageUrlArr: Array<any> = new Array<any>();
 
-  created() {
+  sourceTagUrl(value: string) {
+    alert(value);
+  }
+  
+  created() { 
    this.loading = true;
 
-  setTimeout(() => {
+   setTimeout(() => {
     // retrieve local storage
      if (typeof(Storage) !== 'undefined') {
      

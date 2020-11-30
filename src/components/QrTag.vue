@@ -1,25 +1,30 @@
 <template>
   <div class="tag-container">
    <p class="tag-title">{{ url }}</p>
-   <img class="tag-image" v-bind:src="qrTagSource" alt="qrtag" />
+    <img @click="displaySource" class="tag-image" v-bind:src="qrTagSource" alt="qrtag" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Emit, Prop, Vue, Watch } from 'vue-property-decorator';
 
 @Component({
   name: 'QrTag'
 })
-export default class QrTag extends Vue {
+export default class QrTag extends Vue {  
   // Vue Prop
   @Prop() private url!: string;
-  @Prop() private small!: boolean;
-  
+  @Prop() private small!: boolean; 
   // Vue Computed properties
   get qrTagSource(): string { 
     return this.small ? 'https://qrtag.net/api/qr_3.png?url=' + this.url 
                       : 'https://qrtag.net/api/qr_8.png?url=' + this.url;
+  }
+
+  // Vue Emit, to emit a method from a child component to a parent component
+  @Emit('display-source')
+  displaySource(): string {
+     return this.qrTagSource;
   }
 }
 </script>
