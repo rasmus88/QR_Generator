@@ -29,6 +29,7 @@ export default class QrTag extends Vue {
    margin: 5px 0px 0px 0px;
  }
  .tag-title {
+   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
    font-style: italic;
    margin-bottom: 0.5rem !important;
  }

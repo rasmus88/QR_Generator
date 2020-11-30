@@ -47,6 +47,7 @@ export default class MytagsComponent extends Vue {
 <style scoped>
 .tags-container {
   margin: auto;
-  width: fit-content;
+  padding: 2px 2px 2px 2px;
+  width: fit-content; 
 }
 </style>
